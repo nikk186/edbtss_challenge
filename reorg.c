@@ -40,7 +40,7 @@ int main(int argc, char *argv[]) {
     char* person2_output_file = makepath(argv[1], "person_cl2", "bin");
     p2_out = open_binout(person2_output_file);
 
-    person_map   = (Person *)         mmapr(makepath(argv[1], "person",   "bin"), &person_length);
+    person_map   = (Person *) mmapr(makepath(argv[1], "person",   "bin"), &person_length);
 
     for (unsigned int person_offset = 0; person_offset < person_length/sizeof(Person); person_offset++) {
         // grab a person
@@ -97,6 +97,8 @@ int main(int argc, char *argv[]) {
         }
 
     }
+
+    fclose(knows_out);
 
     return 0;
 }
