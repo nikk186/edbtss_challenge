@@ -124,10 +124,10 @@ void query(unsigned short qid, unsigned short artist, unsigned short areltd[], u
              knows_offset++) {
 
             knows = &person_map[knows_map[knows_offset]];
-            if (person->location != knows->location) {
-                no_people_diff_loc++;
-                continue;
-            }
+//            if (person->location != knows->location) {
+//                no_people_diff_loc++;
+//                continue;
+//            }
 
             no_people_same_loc++;
 
@@ -162,11 +162,11 @@ void query(unsigned short qid, unsigned short artist, unsigned short areltd[], u
         }
     }
 
-    printf("People in the same location %d\n", no_people_same_loc);
-    printf("People in the different location %d\n", no_people_diff_loc);
-
-    printf("Mutual friends %d\n", no_mutual);
-    printf("Non-mutual friends %d\n", no_non_mutual);
+//    printf("People in the same location %d\n", no_people_same_loc);
+//    printf("People in the different location %d\n", no_people_diff_loc);
+//
+//    printf("Mutual friends %d\n", no_mutual);
+//    printf("Non-mutual friends %d\n", no_non_mutual);
 
     // sort result
     qsort(results, result_length, sizeof(Result), &result_comparator);
